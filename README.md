@@ -1,4 +1,7 @@
 # civics-search-app
-An JavaScript/HTML application that uses Google Civics API to search elected government officials and election information
 
-Hello
+The Civics Search Application helps you locate elected representatives based on your location. 
+It also as search option to view upcoming elections nationwide. 
+
+Powered By [Google Civic Information API](https://developers.google.com/civic-information/)
+

@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Civics Lookup Project</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Civics Lookup Project</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
     <div id="page-wrap">
         <h1>Find Your Government Rep!</h1>
         <br />
-        
+
         <div class='col-sm-8 col-sm-offset-2 filter_level'>
             <p>
                 About Section
-            
-            </p>
-            <br/>
-            <p class='text-right'>
-                Select an Option: 
 
-                <label>    
-                    <input type="checkbox" id="Elections" value="Elections"> Get Election Information
-                </label>
-                <label>
-                    <input type="checkbox" id="Representatives" value="Reps"> Show Representatives
-                </label>
-                <!-- <label>
+            </p>
+            <br />
+            <div id="options">
+                <p class='text-right'>
+                    Select an Option:
+
+                    <label>
+                        <input type="checkbox" name="Elections" id="Elections" value="Elections"> Get Election
+                        Information
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Rep" id="Rep" value="Reps"> Show Representatives
+                    </label>
+                    <!-- <label>
                     <input type="checkbox" id="show_local_results" value="Local"> Local
                 </label>
                 <label>
                     <input type="checkbox" id="show_county_results" value="County"> County
                 </label> -->
-            </p>
-            <br/>
-            
+                </p>
+                <br />
+            </div>
         </div>
-       
+
         <section>
             <form class='text-center'>
                 <label for="searchByAddress">Search by Address: </label>
                 <input id="searchByAddress" type="text" placeholder="Enter Address here">
                 <input type="submit">
             </form>
+            <br />
         </section>
-        
-         <script type="text/javascript" src="src/index.js"></script>
+        <table id="table"></table>
         <div id="title"></div>
-   
         <div id="collection"></div>
+        
+        <script type="text/javascript" src="src/index.js"></script>
+
     </div>
-    </body>
-    
+</body>
+
 </html>

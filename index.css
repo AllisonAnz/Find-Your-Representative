@@ -2,11 +2,12 @@ body {
   background-image: url('img/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: #8f8f8f;
+  color: #444141;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
             }
+
 
 #page-wrap {
   width: 800px;
@@ -47,15 +48,20 @@ th, td {
   padding: 20px;
 }
 
-
-
 h1 {
     width:500px;
     margin: 0 auto;
     text-align: center;
 }
 
-p {
+#summary {
+  text-align: center;
+  margin: 0 auto; 
+  font-size: larger;
+}
+
+
+#options {
   text-align: center;
   margin: 0 auto; 
 }

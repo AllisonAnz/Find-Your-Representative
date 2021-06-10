@@ -1,10 +1,7 @@
 const BASE_URL = 'https://www.googleapis.com/civicinfo/v2'
 const API_KEY = 'AIzaSyCNvcK7IHCHI8dre3fFS_hwdB9siUWZ_Oo'
-//Environmental variable JavaScript
-//Readme, make API key
 
 const parameterName = 'representatives'
-let address = ''
 const addressSearchBtn = document.querySelector("#address-search")
 
 
@@ -15,7 +12,6 @@ const init = () => {
     let RepCheckbox = document.querySelector("input[name=Rep]")
 
     options.addEventListener("change", function () {
-        //let elem = evt.target;
         if (RepCheckbox.checked) {
             const inputForm = document.querySelector('form')
             inputForm.addEventListener('submit', (event) => {

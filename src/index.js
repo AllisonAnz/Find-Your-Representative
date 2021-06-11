@@ -1,9 +1,6 @@
 const BASE_URL = 'https://www.googleapis.com/civicinfo/v2'
 const API_KEY = 'AIzaSyCNvcK7IHCHI8dre3fFS_hwdB9siUWZ_Oo'
-
 const parameterName = 'representatives'
-const addressSearchBtn = document.querySelector("#address-search")
-
 
 const init = () => {
 
@@ -93,6 +90,7 @@ function renderOfficials(data) {
 
     function renderRepData() {
         let divCollect = document.querySelector('#collection')
+        let divCard = document.createElement('div')
 
         let h2 = document.createElement('h2')
         h2.innerHTML = officeNames
@@ -103,6 +101,9 @@ function renderOfficials(data) {
         let h4 = document.createElement('h4')
         h4.innerHTML = rep.phones
 
+        let h5 = document.createElement('h5')
+        h5.innerHTML = rep.party
+
         let a = document.createElement('a')
         a.setAttribute('href', rep.urls)
         a.innerHTML = rep.urls
@@ -112,9 +113,9 @@ function renderOfficials(data) {
         img.setAttribute("width", '50px')
         img.setAttribute('class', 'center')
 
-        let divCard = document.createElement('div')
+       
         divCard.setAttribute('class', 'card')
-        divCard.append(h2, img, h3, h4, a)
+        divCard.append(h2, img, h3, h4, h5, a)
         divCollect.append(divCard)
     }
 

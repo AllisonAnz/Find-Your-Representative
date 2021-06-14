@@ -3,30 +3,24 @@ const API_KEY = 'AIzaSyCNvcK7IHCHI8dre3fFS_hwdB9siUWZ_Oo'
 const parameterName = 'representatives'
 
 const init = () => {
-
-    const options = document.getElementById('options');
     let electionCheckbox = document.querySelector("input[name=Elections]");
     let RepCheckbox = document.querySelector("input[name=Rep]")
+    const inputForm = document.querySelector('form')
+    const input = document.querySelector('input#searchByAddress')
 
-    options.addEventListener("change", function () {
+    inputForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        
         if (RepCheckbox.checked) {
-            const inputForm = document.querySelector('form')
-            inputForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const input = document.querySelector('input#searchByAddress')
-                repUrl(input.value)
-            })
+            repUrl(input.value)
+        }
 
-
-        } if (electionCheckbox.checked) {
-            const inputForm = document.querySelector('form')
-            inputForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                electionUrl()
-            })
+        if(electionCheckbox.checked) {
+            electionUrl()
         }
     })
 }
+   
 
 function repUrl(address) {
     fetch(`${BASE_URL}/${parameterName}?address=${address}&key=${API_KEY}`)
@@ -85,7 +79,7 @@ function renderOfficials(data) {
         img.setAttribute('src', rep.photoUrl || 'https://thumbs.dreamstime.com/b/government-icon-vector-male-person-profile-avatar-building-symbol-political-governance-glyph-pictogram-144250791.jpg')
         img.setAttribute("width", '50px')
         img.setAttribute('class', 'center')
-        
+
         divCard.append(h2, img, h3, h4, h5, a)
         divCollect.append(divCard)
     }
@@ -95,7 +89,6 @@ function renderOfficials(data) {
     p.innerHTML = "Representatives"
     p.setAttribute('id', "title-form")
     divTitle.append(p)
-
 }
 
 function renderElectionData(data) {
@@ -123,6 +116,7 @@ function renderElectionData(data) {
         }
     }
 }
+ 
 
 
 

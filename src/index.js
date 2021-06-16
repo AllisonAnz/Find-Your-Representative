@@ -12,15 +12,16 @@ const init = () => {
         event.preventDefault()
         
         if (RepCheckbox.checked) {
+            console.log("Rep is checked")
             repUrl(input.value)
         }
 
         if(electionCheckbox.checked) {
+            console.log("Election is checked")
             electionUrl()
         }
     })
 }
-   
 
 function repUrl(address) {
     fetch(`${BASE_URL}/${parameterName}?address=${address}&key=${API_KEY}`)
@@ -117,9 +118,6 @@ function renderElectionData(data) {
     }
 }
  
-
-
-
 document.addEventListener('DOMContentLoaded', init)
 
 
